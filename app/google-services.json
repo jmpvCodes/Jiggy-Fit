@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "667357653013",
+    "project_id": "jiggy-fit",
+    "storage_bucket": "jiggy-fit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667357653013:android:2ef5515eec14b2cef5c61c",
+        "android_client_info": {
+          "package_name": "com.example.jiggyfit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8vChVlmREZojmcy258J_1lGaBJ09-vW4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
