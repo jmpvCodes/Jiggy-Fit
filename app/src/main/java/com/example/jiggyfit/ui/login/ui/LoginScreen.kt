@@ -23,6 +23,7 @@ import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.material.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.rememberCoroutineScope
@@ -42,7 +43,16 @@ import com.example.jiggyfit.navigation.Routes
 
 @Composable
 fun LoginScreen(viewModel: LoginViewModel, navController: NavController) {
-        Box(
+    val navigateToHome by viewModel.navigateToHome.observeAsState(false)
+    if (navigateToHome) {
+        LaunchedEffect(Unit) {
+            viewModel.onNavigationDone()
+            navController.navigate("home") {
+                popUpTo(navController.graph.startDestinationId) { inclusive = true }
+            }
+        }
+    }
+    Box(
             Modifier
                 .fillMaxSize()
                 .padding(16.dp)

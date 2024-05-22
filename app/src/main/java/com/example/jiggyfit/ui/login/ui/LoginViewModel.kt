@@ -20,6 +20,8 @@ class LoginViewModel : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
+    private val _navigateToHome = MutableLiveData(false)
+    val navigateToHome: LiveData<Boolean> = _navigateToHome
     fun onLoginChanged(email: String, password: String) {
         _email.value = email
         _password.value = password
@@ -34,6 +36,11 @@ class LoginViewModel : ViewModel() {
         _isLoading.value = true
         delay(4000)
         _isLoading.value = false
+        _navigateToHome.value = true
+    }
+
+    fun onNavigationDone() {
+        _navigateToHome.value = false
     }
 
 }
